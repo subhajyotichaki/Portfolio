@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Subhajyoti Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <h2 class="logo">Subhajyoti Chaki</h2>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+
+  </nav>
+
+
+  <header id="home" class="hero">
+
+    <div class="hero-text">
+      <h1>Hi, I'm Subhajyoti </h1>
+      <p>I’m a CSE student passionate about building clean, responsive, and user-friendly web applications.
+        Currently working as a Frontend Intern at Decrypt, I enjoy turning ideas into real-world digital experiences.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects"><button>View Projects</button></a>
+        <a href="CV.pdf" download><button>Resume</button></a>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <img src="1651563197440.jpg" alt="profile">
+    </div>
+
+  </header>
+
+  <main>
+   <section id="about" class="about">
+  <div class="about-text">
+    <h2>About Me</h2>
+    <p>
+      I’m a CSE student passionate about building clean, responsive, and user-friendly web applications.
+    </p>
+  </div>
+</section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="exp-card">
+
+        <div class="exp-top">
+          <div>
+            <h3>Frontend Intern – Decrypt</h3>
+            <p class="duration">Apr 2026 – Present</p>
+          </div>
+        </div>
+
+        <p>
+          Working on web development using React, MongoDB, and modern UI practices.
+        </p>
+
+
+
+        <a href="https://decryptint.com/" target="_blank" class="company-btn">
+          Visit Company
+        </a>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>MongoDB</span>
+        <span>Python</span>
+        <span>React</span>
+        <span>Node.js</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+
+        <div class="card featured">
+          <h3>Portfolio Website</h3>
+          <p>A modern responsive portfolio built with premium UI.</p>
+
+          <div class="card-buttons">
+            <a href="#" target="_blank">Live</a>
+            <a href="#" target="_blank">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3> Netflix</h3>
+          <p>A Netflix clone using HTML & CSS.</p>
+
+          <div class="card-buttons">
+            <a href="#" target="_blank">Live</a>
+            <a href="https://github.com/subhajyotichaki/Netflix-Clone.git" target="_blank">GitHub</a>
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: subhajyotichaki14@mail.com</p>
+      <p>
+        <a href="https://github.com/subhajyotichaki" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/subhajyoti-chaki-648637278/" target="_blank">LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+
+
+
+  <script>
+    const sections = document.querySelectorAll("section, header");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(a => {
+        a.classList.remove("active");
+        if (a.getAttribute("href") === "#" + current) {
+          a.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+  <script>
+    let lastScroll = 0;
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", () => {
+      let currentScroll = window.pageYOffset;
+
+      if (currentScroll > lastScroll) {
+        navbar.style.transform = "translateY(-120%)";
+      } else {
+        navbar.style.transform = "translateY(0)";
+      }
+
+      lastScroll = currentScroll;
+    });
+  </script>
+
+
+</body>
+
+</html>
